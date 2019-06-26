@@ -15,6 +15,9 @@ let min = "";
 let sec = "";
 
 let clock = "";
+let timeZone = "";
+let tz = "";
+let tzField;
 
 
 function time(){
@@ -38,6 +41,14 @@ function time(){
     hour > 12 ? state = "PM" : state  = "AM";
     hour > 12 ? hour = hour - 12 : hour = hour;
     // hour < 10 ? hour = "0" + hour: hour = hour;
+
+    tz = Date();
+    timeZone = tz.slice(tz.search("GMT"));
+
+    tzField = document.querySelector('.timezone');
+    tzField.textContent = (`${timeZone}`);
+    tzField.innerText = (`${timeZone}`);
+
     
     clock = document.querySelector('.clock');
     clock.textContent = (`${date} ${months[month]} ${year} ${days[day]}`);
