@@ -1,21 +1,36 @@
 // import time from './clock';
 
 // Display Date and Time
+let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+let state = "";
+
+let date = "";
+let month = "";
+let year = "";
+let day = "";
+
+let hour = "";
+let min = "";
+let sec = "";
+
+let clock = "";
+
+
 function time(){
     let newDate = new Date();
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let state = "";
 
-    let date = newDate.getDate();
-    let month = newDate.getMonth();
-    let year = newDate.getFullYear();
-    let day = newDate.getDay();
+    date = newDate.getDate();
+    month = newDate.getMonth();
+    year = newDate.getFullYear();
+    day = newDate.getDay();
     
     
-    let hour = newDate.getHours();
-    let min = newDate.getMinutes();
-    let sec = newDate.getSeconds();
+    hour = newDate.getHours();
+    min = newDate.getMinutes();
+    sec = newDate.getSeconds();
+
+    // let zone = newDate.getTimezoneOffset();
 
     min < 10 ? min = "0" + min: min = min;
     sec < 10 ? sec = "0" + sec: sec = sec;
@@ -24,7 +39,7 @@ function time(){
     hour > 12 ? hour = hour - 12 : hour = hour;
     // hour < 10 ? hour = "0" + hour: hour = hour;
     
-    let clock = document.querySelector('.clock');
+    clock = document.querySelector('.clock');
     clock.textContent = (`${date} ${months[month]} ${year} ${days[day]}`);
     clock.innerText = (`${date} ${months[month]} ${year} ${days[day]}`);
     

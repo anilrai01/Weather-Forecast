@@ -23,8 +23,8 @@ body{
 body::after{
     content: '';
     position: absolute;
-    top: -420px;
-    right: -420px;
+    top: -440px;
+    right: -440px;
     width: 675px;
     height: 644px;
     background: #fff;
@@ -36,8 +36,8 @@ body::after{
 body::before{
     content: '';
     position: absolute;
-    bottom: -420px;
-    left: -420px;
+    bottom: -440px;
+    left: -440px;
     width: 675px;
     height: 644px;
     background: #fff;
