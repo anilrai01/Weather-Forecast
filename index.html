@@ -14,11 +14,18 @@
 
         <div class="status">
             <h1>Temperature</h1>
-            <h3 class="temp">21 C</h3>
-            <h3 class="msg">Mostly Clouded</h3>
+            <h2 class="temp">---</h2> 
+            <h3 class="msg">---</h3>
         </div>
 
-        <div class="logo">Logo</div>
+        <div class="logo">
+            <canvas id="icon1" width="300" height="300"></canvas>
+        </div>
+        
+        <div class="msg">
+            <div class="h4">This week status:</div> <br>
+            <div class="dailyMessage">---</div>
+        </div>
 
         <div class="table-container">
                 <table>
@@ -28,8 +35,8 @@
                         </td>
                     </tr>
         
-                    <tr>
-                        <td colspan="2">
+                    <tr class="collapse">
+                        <td colspan="2" class="collapse">
                             <h3 class="clock"></h3>
                         </td>
                     </tr>
@@ -46,19 +53,19 @@
                     </tr>
 
                     <tr>
-                        <td>1534331</td>
-                        <td>3545613</td>
+                        <td id="lat">---</td>
+                        <td id="long">---</td>
                     </tr>
         
-                    <tr class="collapse">
+                    <!-- <tr class="collapse">
                         <td class="collapse">Sunrise</td>
                         <td class="collapse">Sunset</td>
                     </tr>
 
                     <tr>
-                        <td>123541351</td>
-                        <td>31684135</td>
-                    </tr>
+                        <td id="sunR">123541351</td>
+                        <td id="sunS">31684135</td>
+                    </tr> -->
         
                     <tr class="collapse">
                         <td class="collapse">Humidity</td>
@@ -66,8 +73,8 @@
                     </tr>
 
                     <tr>
-                        <td>213</td>
-                        <td>2135</td>
+                        <td id='hum'>---</td>
+                        <td id='airP'>---</td>
                     </tr>
         
                 </table>
@@ -75,7 +82,10 @@
 
     </div>
 
+    
+    <!-- <div class="powered">Powered By </div> -->
 
     <script src="src/js/app.js"></script>
+    <script src="src/js/skycons.js"></script>
 </body>
 </html>

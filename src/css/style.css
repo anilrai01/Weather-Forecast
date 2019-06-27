@@ -38,24 +38,28 @@ body::before {
 
 .container {
   max-width: 80%;
-  margin: 200px auto;
+  margin: 150px auto;
   display: grid;
-  grid-template-columns: auto auto; }
+  grid-template-columns: 50% auto; }
 
-.status {
+.status, .logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  line-height: 4em; }
+  line-height: 3.5em; }
+
+.timezone {
+  margin-top: 8px; }
 
 .table-container {
   position: relative;
-  grid-column-start: 2;
-  grid-column-end: 3;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center; }
+
+.msg {
   text-align: center; }
 
 table {
@@ -63,7 +67,7 @@ table {
   width: 80%; }
   table tr, table td {
     border-bottom: 1px solid #ddd;
-    padding: 8px; }
+    padding: 6px; }
 
 .collapse {
   border: none;
