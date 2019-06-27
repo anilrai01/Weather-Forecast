@@ -1,2 +1,2 @@
 # Weather-App
-Displaying current weather and some basic information using JavaScript and Dark Sky API
+Displays current weather status and some basic information as per your current geographical location i.e latitude and longitude, using JavaScript and Dark Sky API
