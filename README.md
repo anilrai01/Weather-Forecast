@@ -1,2 +1,2 @@
 # Weather-App
-Weather Display App using JavaScript
+Displaying current weather and some basic information using JavaScript and Dark Sky API
