@@ -1,7 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
-$pinky : rgba(227,46,255,1);
-$purp : rgba(74,53,176,1);
+$colors: (
+    pinky : rgba(227,46,255,1),
+    purp : rgba(74,53,176,1),
+);
+
+$mobile: 320px;
+$mobileTab: 670px;
+
+//Defining Mixins for Mobile
+@mixin mobile {
+    @media (min-width: #{$mobile}){
+        @content;
+    }
+}
+
+@mixin mobileTab {
+    @media (min-height: #{$mobileTab}){
+        @content;
+    }
+}
+
+//Getting color
+@function getColor($color-name){
+    @return map-get($colors, $color-name);
+}
 
 *{
     margin: 0;
@@ -13,7 +36,7 @@ body{
     // position: relative;
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient( 0deg, $pinky, $purp );
+    background-image: linear-gradient( 0deg, getColor(pinky), getColor(purp) );
     // background: red;
     overflow: hidden;
     font-family: 'Raleway', sans-serif;
@@ -44,6 +67,12 @@ body::before{
     border: none;
     transform: rotate(42deg);
     box-shadow: 20px 0px 10px rgba(0, 0, 0, 0.9);
+}
+
+@include mobile {
+    body::before, body::after{
+        display: none;
+    }
 }
 
 .container{
@@ -91,4 +120,92 @@ table{
 .collapse{
     border: none;
     border-collapse: collapse;
+}
+
+@include mobile {
+    .container{
+        display: flex;
+        flex-direction: column;
+        margin: 20px auto;
+    }
+    canvas{
+        width: 125px;
+        height: 125px;
+    }
+    .logo{
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -ms-flex-order: 1;
+        -webkit-order: 1;
+        order: 1;
+    }
+    .status{
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        -ms-flex-order: 2;
+        -webkit-order: 2;
+        order: 2;
+        line-height: 2em;
+
+        h1{
+            font-size: 20px;
+        }
+        h2{
+            font-size: 18px;
+        }
+        h3{
+            font-size: 16px;
+        }
+    }
+    .msg{
+        -webkit-box-ordinal-group: 3;
+        -moz-box-ordinal-group: 3;
+        -ms-flex-order: 3;
+        -webkit-order: 3;
+        order: 3;
+        // display: none;
+        margin-top: 5%;
+
+        h4{
+            font-size: 14px;
+        }
+        .dailyMessage{
+            font-size: 13px;
+            margin-top: 10px;
+        }
+    }
+    .table-container{
+        -webkit-box-ordinal-group: 4;
+        -moz-box-ordinal-group: 4;
+        -ms-flex-order: 4;
+        -webkit-order: 4;
+        order: 4;
+
+        margin-top: 5%;
+        font-size: 12px;
+    }
+}
+
+@include mobileTab {
+    canvas{
+        width: 150px;
+        height: 150px;
+    }
+    .container{
+        margin-top: 60px;
+    }
+
+    .msg{
+        h4{
+            font-size: 18px;
+        }
+        .dailyMessage{
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    }
+
+    .table-container{
+        font-size: 18px;
+    }
 }
