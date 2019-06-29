@@ -8,7 +8,8 @@ $colors: (
 $mobile: 450px;
 $medDevice: 670px;
 $tab: 760px;
-$desktop : 840px;
+// $desktop : 840px;
+$desktop : 1020px;
 
 //Defining Mixins for Mobile
 @mixin mobile {
@@ -29,6 +30,12 @@ $desktop : 840px;
     }
 }
 
+@mixin desktop{
+    @media (min-width: #{$desktop}){
+        @content;
+    }
+}
+
 //Getting color
 @function getColor($color-name){
     @return map-get($colors, $color-name);
@@ -38,10 +45,10 @@ $desktop : 840px;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    // overflow: hidden;
 }
 
 body{
-    // position: relative;
     width: 100%;
     height: 100vh;
     background-image: linear-gradient( 0deg, getColor(pinky), getColor(purp) );
@@ -49,6 +56,7 @@ body{
     overflow: hidden;
     font-family: 'Raleway', sans-serif;
     color: #fff;
+    background-repeat: no-repeat;
 }
 
 body::after{
@@ -199,6 +207,7 @@ table{
         width: 160px;
         height: 160px;
     }
+
     .container{
         margin-top: 40px;
     }
@@ -223,7 +232,14 @@ table{
         width: 180px;
         height: 180px;
     }
+
     .container{
         margin-top: 40%;
+    }
+}
+
+@include desktop{
+    .container{
+        margin-top: 12%;
     }
 }

@@ -10,7 +10,8 @@ body {
   background-image: linear-gradient(0deg, #e32eff, #4a35b0);
   overflow: hidden;
   font-family: 'Raleway', sans-serif;
-  color: #fff; }
+  color: #fff;
+  background-repeat: no-repeat; }
 
 body::after {
   content: '';
@@ -151,5 +152,8 @@ table {
 
   .container {
     margin-top: 40%; } }
+@media (min-width: 1020px) {
+  .container {
+    margin-top: 12%; } }
 
 /*# sourceMappingURL=style.css.map */
