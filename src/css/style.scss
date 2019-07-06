@@ -201,6 +201,15 @@ table{
         font-size: 12px;
     }
 }
+#link{
+    padding: 20px;
+}
+
+#link td a{
+    text-decoration: none;
+    color: #fff;
+}
+
 
 @include medDevice {
     canvas{
